@@ -1,0 +1,347 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Product Showcase</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <h1 class="logo"><a href="#">MyShop</a></h1>
+      </div>
+      <nav class="nav-middle">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <!-- <li><a href="#categories">Categories</a></li> -->
+          <li><a href="#products">Products</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right">
+        <ul>
+          <li>
+            <a href="checkout.html" id="cartLink" class="cart-btn">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span id="cartCount">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <!-- <section class="hero">
+    <div class="swiper heroSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide hero-slide" style="background-image:url('https://picsum.photos/1200/400?random=1');">
+          <div class="hero-text">
+            <h2>Exclusive Deals!</h2>
+            <p>Up to 50% off on Electronics</p>
+            <button>Shop Now</button>
+          </div>
+        </div>
+        <div class="swiper-slide hero-slide" style="background-image:url('https://picsum.photos/1200/400?random=2');">
+          <div class="hero-text">
+            <h2>New Arrivals</h2>
+            <p>Check out the latest trends</p>
+            <button>Explore</button>
+          </div>
+        </div>
+        <div class="swiper-slide hero-slide" style="background-image:url('https://picsum.photos/1200/400?random=3');">
+          <div class="hero-text">
+            <h2>Summer Collection</h2>
+            <p>Stylish & Comfortable</p>
+            <button>Shop Now</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </section> -->
+
+  <!-- Categories -->
+  <!-- <section id="categories" class="categories">
+    <h2>Shop by Category</h2>
+    <div class="category-grid">
+      <div class="category-card">Electronics</div>
+      <div class="category-card">Fashion</div>
+      <div class="category-card">Sports</div>
+      <div class="category-card">Home & Kitchen</div>
+      <div class="category-card">Toys</div>
+      <div class="category-card">Books</div>
+    </div>
+  </section> -->
+
+  <!-- Product Search -->
+  <section class="product-search">
+    <input type="text" id="searchInput" placeholder="Search products...">
+    <button id="searchBtn"><i class="fa fa-search"></i></button>
+  </section>
+
+  <!-- Search Results Section -->
+  <section id="searchResults" class="product-showcase" style="display:none;">
+    <h2>Search Results</h2>
+    <div id="resultsContainer" class="category-grid"></div>
+  </section>
+
+  <!-- Product Categories Filter -->
+  <section class="category-filter">
+    <h2>Shop by Category</h2>
+    <ul class="category-list">
+      <li><button class="category-btn" data-category="all">All</button></li>
+      <li><button class="category-btn" data-category="mobile">Mobile</button></li>
+      <li><button class="category-btn" data-category="camera">Camera</button></li>
+      <li><button class="category-btn" data-category="smartwatch">Smartwatch</button></li>
+      <li><button class="category-btn" data-category="shoes">Shoes</button></li>
+    </ul>
+  </section>
+
+  <!-- Featured Products -->
+  <section id="products" class="product-showcase">
+    <!-- <h2>Featured Products</h2> -->
+    <div class="swiper productSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- Product 1 - Smartwatch -->
+        <div class="swiper-slide product-card category-filtered smartwatch">
+          <a href="product-smartwatch.html">
+            <img
+              src="https://images.unsplash.com/photo-1637160151663-a410315e4e75?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Smart Watch">
+            <h3>Smart Watch</h3>
+            <p>₹2000</p>
+          </a>
+          <!-- Actions -->
+          <div class="actions">
+            <button class="add-cart" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://images.unsplash.com/photo-1637160151663-a410315e4e75?q=80&w=774&auto=format&fit=crop">Add
+              to Cart</button>
+            <button class="buy-now" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://images.unsplash.com/photo-1637160151663-a410315e4e75?q=80&w=774&auto=format&fit=crop">Buy
+              Now</button>
+          </div>
+        </div>
+
+
+        <!-- Product 2 - Headphones -->
+        <div class="swiper-slide product-card category-filtered">
+          <a href="product-headphones.html">
+            <img
+              src="https://images.unsplash.com/photo-1628202926206-c63a34b1618f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Headphones">
+            <h3>Headphones</h3>
+            <p>₹2999</p>
+          </a>
+           <!-- Actions -->
+          <div class="actions">
+            <button class="add-cart" data-id="headphones1" data-name="headphones" data-price="120"
+              data-image="https://images.unsplash.com/photo-1628202926206-c63a34b1618f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Add
+              to Cart</button>
+            <button class="buy-now" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://images.unsplash.com/photo-1628202926206-c63a34b1618f?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 3 - Camera -->
+        <div class="swiper-slide product-card category-filtered camera">
+          <a href="product-camera.html">
+            <img
+              src="https://images.unsplash.com/photo-1603208234872-619ffa1209cb?q=80&w=748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Camera">
+            <h3>Camera</h3>
+            <p>₹4999</p>
+          </a>
+           <!-- Actions -->
+          <div class="actions">
+            <button class="add-cart" data-id="camera1" data-name="camera" data-price="120"
+              data-image="https://images.unsplash.com/photo-1603208234872-619ffa1209cb?q=80&w=748&auto=format&fit=crop">Add
+              to Cart</button>
+            <button class="buy-now" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://images.unsplash.com/photo-1603208234872-619ffa1209cb?q=80&w=748&auto=format&fit=crop">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 4 - Shoes -->
+        <div class="swiper-slide product-card category-filtered shoes">
+          <a href="product-sneakers.html">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1710107447132-063440229ee4?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Sneakers">
+            <h3>Sneakers</h3>
+            <p>₹95</p>
+          </a>
+          <!-- Actions -->
+          <div class="actions">
+            <button class="add-cart" data-id="sneakers1" data-name="sneakers" data-price="120"
+              data-image="https://plus.unsplash.com/premium_photo-1710107447132-063440229ee4?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Add
+              to Cart</button>
+            <button class="buy-now" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://plus.unsplash.com/premium_photo-1710107447132-063440229ee4?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 5 - Mobile -->
+        <div class="swiper-slide product-card category-filtered mobile">
+          <a href="product-mobile1.html">
+            <img
+              src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=2913&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Mobile">
+            <h3>iPhone 14</h3>
+            <p>₹60000</p>
+          </a>
+          <!-- Actions -->
+          <div class="actions">
+            <button class="add-cart" data-id="Mobile1" data-name="Mobile" data-price="120"
+              data-image="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=2913&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Add
+              to Cart</button>
+            <button class="buy-now" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=2913&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <!-- Product 6 - Mobile -->
+        <div class="swiper-slide product-card category-filtered mobile">
+          <a href="product-mobile2.html">
+            <img
+              src="https://images.unsplash.com/photo-1600087626014-e652e18bbff2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Mobile">
+            <h3>Android 15</h3>
+            <p>₹50000</p>
+          </a>
+          <!-- Actions -->
+          <div class="actions">
+            <button class="add-cart" data-id="Mobile2" data-name="Mobile" data-price="120"
+              data-image="https://images.unsplash.com/photo-1600087626014-e652e18bbff2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Add
+              to Cart</button>
+            <button class="buy-now" data-id="smartwatch1" data-name="Smart Watch" data-price="120"
+              data-image="https://images.unsplash.com/photo-1600087626014-e652e18bbff2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">Buy
+              Now</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Offers Section -->
+  <section id="offers" class="offers">
+    <h2>Hot Deals & Offers</h2>
+    <div class="offer-cards">
+      <div class="offer-card">
+        <h3>50% Off Electronics</h3>
+        <p>Limited time only!</p>
+      </div>
+      <div class="offer-card">
+        <h3>Buy 1 Get 1 Free</h3>
+        <p>Fashion collection</p>
+      </div>
+      <div class="offer-card">
+        <h3>Summer Sale</h3>
+        <p>Up to 40% off</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <h2>Customer Reviews</h2>
+    <div class="swiper testimonialSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide testimonial-card">
+          <p>"Amazing products and fast delivery!"</p>
+          <h4>- John Doe</h4>
+        </div>
+        <div class="swiper-slide testimonial-card">
+          <p>"High quality and great prices."</p>
+          <h4>- Jane Smith</h4>
+        </div>
+        <div class="swiper-slide testimonial-card">
+          <p>"I love shopping here!"</p>
+          <h4>- Michael Lee</h4>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form id="newsletter-form">
+      <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <p id="newsletter-message" style="margin-top:10px; font-size:14px;"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <p>© 2025 MyShop. @rohit-tamboli</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script>
+    function updateCartCount() {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let count = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById("cartCount").textContent = count;
+    }
+
+    // Update on page load
+    updateCartCount();
+
+    // Optional: keep updating if cart changes in another tab
+    window.addEventListener("storage", updateCartCount);
+
+    // Make sure cart link always redirects
+    document.getElementById("cartLink").addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "./checkout.html";
+    });
+
+
+  </script>
+
+  <script src="products-data.js"></script>
+  <script src="script.js"></script>
+  <script src="./product-script.js"></script>
+
+</body>
+
+</html>

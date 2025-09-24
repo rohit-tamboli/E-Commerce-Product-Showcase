@@ -1,0 +1,594 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 30px;
+}
+
+.nav-left .logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  background: transparent;
+  transition: all 0.3s ease;
+  /* smooth hover effect */
+  cursor: pointer;
+}
+
+.nav-left .logo:hover {
+  transform: translateY(-2px);
+  /* same lift as cart-btn */
+}
+
+.nav-middle ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-middle ul li a {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  /* same rounded corners */
+  color: #333;
+  text-decoration: none;
+  background: transparent;
+  transition: all 0.3s ease;
+  /* smooth hover effect */
+}
+
+.nav-middle ul li a:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  /* same lift as cart-btn */
+}
+
+/* Cart Button */
+.nav-right ul {
+  list-style: none;
+}
+
+.cart-btn {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  padding: 8px 15px;
+  border-radius: 8px;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cart-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Badge counter */
+#cartCount {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: #ff3b3b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 50%;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+
+
+
+@media(max-width:992px) {
+  .nav-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-middle ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+/* Hero */
+.hero-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-text {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 40px;
+  border-radius: 12px;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.hero-text button {
+  padding: 10px 25px;
+  border: 2px solid #fff;
+  background: transparent;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-text button:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Categories */
+.categories {
+  padding: 50px;
+  text-align: center;
+}
+
+.categories h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: #fff;
+  padding: 30px 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  background: #000;
+  color: #fff;
+}
+
+/* Products */
+.product-showcase {
+  text-align: center;
+}
+
+/* Remove text decoration for links */
+a {
+  text-decoration: none;
+  color: inherit; /* Ensure the link inherits the color of the parent element */
+}
+
+.product-card {
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  height: 600px;
+  width: 350px !important;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Makes the image cover the container */
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #000;
+  text-decoration: none !important;
+}
+
+.product-card p {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.product-card button {
+  padding: 10px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  
+}
+
+.product-card {
+  display: block;
+  /* makes the whole card clickable */
+  background: #fff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+  text-decoration: none;
+  /* remove link underline */
+  color: inherit;
+  /* keep text color */
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* Offers */
+.offers {
+  padding: 50px;
+  text-align: center;
+  background: #e9ecef;
+  margin-top: 30px;
+}
+
+.offers h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.offer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.offer-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: 0.3s;
+}
+
+.offer-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Testimonials */
+.testimonials {
+  /* padding: 50px; */
+  text-align: center;
+}
+
+.testimonials h2 {
+  padding: 30px;
+  font-size: 32px;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f8f9fa;
+  border-radius: 15px;
+  margin: 50px auto;
+  max-width: 700px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.newsletter h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #222;
+}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.newsletter input {
+  padding: 12px 20px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.newsletter input:focus {
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.newsletter button {
+  padding: 12px 25px;
+  border: 2px solid #000;
+  background: transparent;
+  color: #000;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.newsletter button:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000;
+}
+
+.swiper-pagination-bullet-active {
+  background: #000;
+}
+
+/* Product Search */
+.product-search {
+  display: none;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 10px;
+}
+
+.product-search input {
+  width: 300px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.product-search input:focus {
+  border-color: #000;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.product-search button {
+  padding: 10px 18px;
+  border: 2px solid #000;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-search button:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* - */
+
+/* Search */
+
+#searchResults {
+  padding: 40px;
+  text-align: center;
+}
+
+#searchResults h2 {
+  margin-bottom: 40px;
+  margin-top: -40px;
+}
+
+#resultsContainer {
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  gap: 40px;
+  display: flex;
+}
+
+
+/* Category Filter Section */
+.category-filter {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.category-btn {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.category-btn:hover {
+  background-color: #ff6600;
+}
+
+.product-card {
+  display: block;
+  /* Your other styles for products */
+}
+
+.category-list {
+  list-style-type: none;  /* Removes the bullets */
+  padding-left: 0;        /* Removes the default padding */
+  margin-bottom: 20px;
+}
+
+.category-list li {
+  margin: 0;  /* Optional: Removes extra space around the list items */
+}
+
+.category-filter h2 {
+  padding-bottom: 20px;
+  font-size: 30px;
+  margin-top: -20px;
+}
+
+/* Style the pagination bullets in horizontal mode */
+.swiper-horizontal > .swiper-pagination-bullets {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Customize pagination bullets appearance */
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  list-style: none;
+  display: none;
+  gap: 10px;
+}
+
+.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight the active bullet */
+.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #007bff;
+}
+
+/* Style for custom pagination (if you define one) */
+.swiper-pagination-custom {
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Styling for fraction pagination */
+.swiper-pagination-fraction {
+  color: #fff;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* Remove text decoration for links */
+a {
+  text-decoration: none;
+  color: inherit; /* Ensure the link inherits the color of the parent element */
+}
+
+.add-cart {
+  background: #000;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.add-cart:hover {
+  background: #444;
+}
+
+.buy-now {
+  background: #FFD700;
+  color: #000;
+}
+
+.buy-now:hover {
+  background: #e6c200;
+} 
+

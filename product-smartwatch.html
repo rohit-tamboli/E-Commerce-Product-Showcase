@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Watch - Product Details</title>
+  <!-- ✅ Link to your external CSS file -->
+  <link rel="stylesheet" href="product-style.css">
+</head>
+<body>
+
+  <div class="product-container">
+    <!-- Product Image -->
+    <div class="product-image">
+      <img src="https://images.unsplash.com/photo-1637160151663-a410315e4e75?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smart Watch">
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h1>Smart Watch</h1>
+      <p class="price">₹120</p>
+      <div class="rating">
+        <span data-star="1">☆</span>
+        <span data-star="2">☆</span>
+        <span data-star="3">☆</span>
+        <span data-star="4">☆</span>
+        <span data-star="5">☆</span>
+      </div>
+      <p class="description">
+        Stay connected, fit, and stylish with our latest Smart Watch. 
+        Track your fitness, monitor your heart rate, and receive notifications directly on your wrist. 
+        Designed for comfort and packed with features to make your life easier.
+      </p>
+      <div class="actions">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Reviews Section -->
+  <div class="reviews-container">
+    <h2>Customer Reviews</h2>
+
+    <!-- Review Form -->
+    <form id="reviewForm">
+      <div class="review-rating">
+        <span data-star="1">☆</span>
+        <span data-star="2">☆</span>
+        <span data-star="3">☆</span>
+        <span data-star="4">☆</span>
+        <span data-star="5">☆</span>
+      </div>
+      <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <!-- Reviews Display -->
+    <div id="reviewsList"></div>
+  </div>
+
+  <script>
+  window.productData = {
+    id: "smartwatch1",
+    name: "Smart Watch",
+    price: 120,
+    image: "https://images.unsplash.com/photo-1637160151663-a410315e4e75?q=80&w=774&auto=format&fit=crop"
+  };
+</script>
+  <script src="./product-script.js"></script>
+  
+</body>
+</html>

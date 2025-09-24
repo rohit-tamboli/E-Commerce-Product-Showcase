@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneakers - Product Details</title>
+  <link rel="stylesheet" href="product-style.css"> <!-- ✅ shared styles -->
+</head>
+<body>
+
+  <div class="product-container">
+    <!-- Product Image -->
+    <div class="product-image">
+      <img src="https://plus.unsplash.com/premium_photo-1710107447132-063440229ee4?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sneakers">
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h1>Sneakers</h1>
+      <p class="price">₹95</p>
+      <div class="rating">
+        <span data-star="1">☆</span>
+        <span data-star="2">☆</span>
+        <span data-star="3">☆</span>
+        <span data-star="4">☆</span>
+        <span data-star="5">☆</span>
+      </div>
+      <p class="description">
+        Step out in style with our lightweight and comfortable Sneakers. 
+        Designed for everyday wear, sports, and long-lasting durability.
+      </p>
+      <div class="actions">
+        <button class="add-cart">Add to Cart</button>
+        <button class="buy-now">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- Reviews Section -->
+  <div class="reviews-container">
+    <h2>Customer Reviews</h2>
+
+    <!-- Review Form -->
+    <form id="reviewForm">
+      <div class="review-rating">
+        <span data-star="1">☆</span>
+        <span data-star="2">☆</span>
+        <span data-star="3">☆</span>
+        <span data-star="4">☆</span>
+        <span data-star="5">☆</span>
+      </div>
+      <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+
+    <!-- Reviews Display -->
+    <div id="reviewsList"></div>
+  </div>
+
+  <script>
+  window.productData = {
+    id: "sneakers1",
+    name: "Sneakers",
+    price: 95,
+    image: "https://plus.unsplash.com/premium_photo-1710107447132-063440229ee4?q=80&w=774&auto=format&fit=crop"
+  };
+</script>
+  <script src="./product-script.js"></script>
+
+</body>
+</html>

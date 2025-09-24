@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .checkout-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Cart Section */
+    .cart {
+      flex: 2;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .cart h1 {
+      margin: 0 0 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .product-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product-item img {
+      width: 100px;
+      border-radius: 10px;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-info h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .product-info p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .quantity-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .quantity-controls button {
+      padding: 4px 8px;
+      background: #ddd;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .remove-btn {
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* Summary Section */
+    .summary {
+      flex: 1;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      height: fit-content;
+    }
+
+    .summary h2 {
+      margin: 0 0 15px;
+      font-size: 20px;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .summary p {
+      display: flex;
+      justify-content: space-between;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .summary .total {
+      font-weight: bold;
+      font-size: 18px;
+      border-top: 2px solid #eee;
+      margin-top: 15px;
+      padding-top: 10px;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      background: #FFD700;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .checkout-btn:hover {
+      background: #e6c200;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-container">
+    <!-- Cart Section -->
+    <div class="cart">
+      <h1>Your Cart</h1>
+      <div id="cartItems"></div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary">
+      <h2>Order Summary</h2>
+      <p><span>Subtotal</span> <span id="subtotal">₹0</span></p>
+      <p><span>Shipping</span> <span>₹50</span></p>
+      <p class="total"><span>Total</span> <span id="grandTotal">₹0</span></p>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Payment</button>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const cartItemsEl = document.getElementById("cartItems");
+    const subtotalEl = document.getElementById("subtotal");
+    const grandTotalEl = document.getElementById("grandTotal");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    function renderCart() {
+      cartItemsEl.innerHTML = "";
+      let subtotal = 0;
+
+      if (cart.length === 0) {
+        cartItemsEl.innerHTML = "<p>Your cart is empty 🛒</p>";
+        subtotalEl.textContent = "₹0";
+        grandTotalEl.textContent = "₹0";
+        checkoutBtn.disabled = true;
+        return;
+      }
+
+      checkoutBtn.disabled = false;
+
+      cart.forEach((item, index) => {
+        subtotal += item.price * item.qty;
+
+        cartItemsEl.innerHTML += `
+          <div class="product-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="product-info">
+              <h2>${item.name}</h2>
+              <p>Price: ₹${item.price}</p>
+              <div class="quantity-controls">
+                <button onclick="updateQty(${index}, -1)">-</button>
+                <span>${item.qty}</span>
+                <button onclick="updateQty(${index}, 1)">+</button>
+              </div>
+            </div>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+          </div>
+        `;
+      });
+
+      subtotalEl.textContent = `₹${subtotal}`;
+      grandTotalEl.textContent = `₹${subtotal + 50}`;
+    }
+
+    function updateQty(index, change) {
+      if (cart[index].qty + change <= 0) return;
+      cart[index].qty += change;
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    checkoutBtn.addEventListener("click", () => {
+      let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0) + 50;
+      alert(`✅ Purchase successful!\nTotal: ₹${total}\nThank you for shopping!`);
+      localStorage.removeItem("cart");
+      renderCart();
+    });
+
+    renderCart();
+
+    
+
+    
+  </script>
+
+</body>
+</html>
