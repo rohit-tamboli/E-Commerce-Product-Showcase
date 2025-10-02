@@ -3,24 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camera - Product Details</title>
-  <link rel="stylesheet" href="product-style.css">
+  <title>Sneakers - Product Details</title>
+  <link rel="stylesheet" href="product-style.css"> <!-- ✅ shared styles -->
 </head>
 <body>
 
   <div class="product-container">
-
     <!-- Product Image -->
     <div class="product-image">
-      <img src="https://images.unsplash.com/photo-1600087626014-e652e18bbff2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Camera">
+      <img src="https://images.unsplash.com/photo-1605348532760-6753d2c43329?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sneakers">
     </div>
 
     <!-- Product Details -->
     <div class="product-details">
-      <h1>Mobile</h1>
-      <p class="price">₹50000</p>
-
-      <!-- Product Rating -->
+      <h1>Nike</h1>
+      <p class="price">₹9005</p>
       <div class="rating">
         <span data-star="1">☆</span>
         <span data-star="2">☆</span>
@@ -28,13 +25,10 @@
         <span data-star="4">☆</span>
         <span data-star="5">☆</span>
       </div>
-
       <p class="description">
-        Capture stunning photos and videos with our high-resolution Camera.
-        Packed with features like fast autofocus, low-light performance, and advanced lens technology.
+        Step out in style with our lightweight and comfortable Sneakers. 
+        Designed for everyday wear, sports, and long-lasting durability.
       </p>
-
-      <!-- Actions -->
       <div class="actions">
         <button class="add-cart">Add to Cart</button>
         <button class="buy-now">Buy Now</button>
@@ -42,6 +36,7 @@
     </div>
   </div>
 
+  
   <!-- Reviews Section -->
   <div class="reviews-container">
     <h2>Customer Reviews</h2>
@@ -64,13 +59,14 @@
   </div>
 
   <script>
-    window.productData = {
-      id: "Mobile2",
-      name: "Mobile",
-      price: 50000,
-      image: "https://images.unsplash.com/photo-1600087626014-e652e18bbff2?q=80&w=928&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    };
-  </script>
-  <script src="product-script.js"></script>
+  window.productData = {
+    id: "shoes1",
+    name: "Nike",
+    price: 9005,
+    image: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  };
+</script>
+  <script src="./product-script.js"></script>
+
 </body>
 </html>
